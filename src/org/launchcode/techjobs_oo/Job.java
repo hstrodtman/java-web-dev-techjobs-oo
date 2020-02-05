@@ -98,12 +98,12 @@ public class Job {
 
         for(int i = 0; i < jobFields.size(); i++){
             if (jobFields.get(i) == ""){
-             jobFields.set(i, "Data Not Available");
+             jobFields.set(i, "Data not available");
             }
         }
 
-        if (jobFields.get(0) == "Data Not Available" &&  jobFields.get(1) == "Data Not Available" && jobFields.get(2) == "Data Not Available" && jobFields.get(3) == "Data Not Available"
-        && jobFields.get(4) == "Data Not Available") {
+        if (jobFields.get(0) == "Data not available" &&  jobFields.get(1) == "Data not available" && jobFields.get(2) == "Data not available" && jobFields.get(3) == "Data not available"
+        && jobFields.get(4) == "Data not available") {
             return "OOPS! This job does not seem to exist.";
         } else {
             return "\n" + "ID: " + job.getId() +"\n" + "Name: " + jobFields.get(0) + "\n" + "Employer: " + jobFields.get(1) + "\n" + "Location: " +
