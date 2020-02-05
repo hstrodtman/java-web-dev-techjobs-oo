@@ -13,8 +13,10 @@ public class Main {
         jobs.add(job1);
         jobs.add(job2);
 
-        for (Job job : jobs){
-            System.out.println(job);
-        }
+        System.out.println(Job.toString(job1));
+
+//        for (Job job : jobs){
+//            System.out.println(job);
+//        }
     }
 }

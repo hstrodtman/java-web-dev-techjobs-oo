@@ -43,4 +43,39 @@ public class JobTest {
         assertTrue(testJob3.getCoreCompetency() instanceof CoreCompetency);
 
     }
+
+    @Test
+    public void testJobsForEquality(){
+        Job testJob4 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job testJob5 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertFalse(testJob4.getId() == testJob5.getId());
+    }
+
+//    @Test
+//    public void testToStringStartsAndEndsWithNewLine(){
+//        Job testJob6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+//        String jobString = Job.toString(testJob6);
+//        System.out.println(jobString);
+//        assertEquals(true, jobString.matches("\n$"));
+//    }
+
+    @Test
+    public void testToString(){
+        Job testJob7 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(Job.toString(testJob7) , "\n" + "ID: " + testJob7.getId() + "\n" + "Name: " + "Product tester\n" + "Employer: " + "ACME\n" +
+                        "Location: " + "Desert\n" + "Position Type: " + "Quality control\n" + "Core Competency: " + "Persistence\n");
+                   }
+    @Test
+    public void testEmptyJobField(){
+        Job testJob8 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertEquals(Job.toString(testJob8) , "\n" + "ID: " + testJob8.getId() + "\n" + "Name: " + "Data Not Available\n" + "Employer: " + "ACME\n" +
+                "Location: " + "Desert\n" + "Position Type: " + "Quality control\n" + "Core Competency: " + "Persistence\n");
+    }
+
+    @Test
+    public void testAllEmptyJobFields(){
+        Job testJob9 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
+        assertEquals(Job.toString(testJob9) , "OOPS! This job does not seem to exist.");
+    }
 }
+//
