@@ -51,12 +51,12 @@ public class JobTest {
         assertFalse(testJob4.getId() == testJob5.getId());
     }
 
-//    @Test
-//    public void testToStringStartsAndEndsWithNewLine(){
-//        Job testJob6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
-//        String jobString = Job.toString(testJob6);
-//        assertEquals(true, jobString.matches("\n$"));
-//    }
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job testJob6 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String jobString = Job.toString(testJob6);
+        assertTrue(jobString.indexOf('\n') == 0 && jobString.charAt(jobString.length() - 1) == '\n');
+        }
 
     @Test
     public void testToString(){
@@ -77,4 +77,3 @@ public class JobTest {
         assertEquals(Job.toString(testJob9) , "OOPS! This job does not seem to exist.");
     }
 }
-//
